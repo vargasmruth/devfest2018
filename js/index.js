@@ -71,7 +71,7 @@ particlesJS("particles-js", {
         "detect_on": "canvas",
         "events": {
             "onhover": {
-                "enable": true,
+                "enable": false,
                 "mode": "grab"
             },
             "onclick": {
@@ -108,3 +108,9 @@ particlesJS("particles-js", {
     },
     "retina_detect": true
 });
+
+var vHeight = $(window).height(),
+    vWidth = $(window).width(),
+    cover = $('.cover');
+
+cover.css({"height":vHeight,"width":vWidth});

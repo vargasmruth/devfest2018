@@ -1,21 +1,496 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>particles.js multicolor demo </title>  
-        <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="author" content="GDG Santa Cruz">
+    <meta name="description" content="GDG Santa Cruz - GDG DevFest Santa Cruz 2018">
+    <meta name="keywords" content="evento, gdg, wtm, google, programming, android, chrome, developers, gdgscz, wtmscz">
+
+    <link rel="canonical" href="http://www.gdgsantacruz.org">
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@gdgsantacruz">
+    <meta name="twitter:title" content=" GDG Santa Cruz 2018 #GDGSantaCruz">
+    <meta name="twitter:description" content="GDG Santa Cruz - GDG DevFest Santa Cruz 2018">
+    <meta name="twitter:image:src" content="http://gdgsantacruz.org/img/other/gdgscz.png">
+
+    <!-- Social: Facebook / Open Graph -->
+    <meta property="og:title" content="#GDGSantaCruz 2018" />
+    <meta property="og:site_name" content="GDG Santa Cruz 2018" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.gdgsantacruz.org" />
+    <meta name="twitter:image:src" content="http://gdgsantacruz.org/img/other/gdgscz.png">
+    <meta property="og:description" content="GDG Santa Cruz - GDG DevFest Santa Cruz 2018" />
+
+    <title>#DevFest18 #GDGSantaCruz</title>
+    <link rel="shortcut icon" href="img/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="icon" type="image/png" href="img/favicons/favicon-196x196.png">
+    <link rel="icon" type="image/png" href="img/favicons/favicon-160x160.png">
+    <link rel="icon" type="image/png" href="img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" href="img/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-TileImage" content="img/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="img/favicons/browserconfig.xml">
+
+    <link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+    <link rel='dns-prefetch' href='http://s.w.org/' />
+    <style>@font-face{font-family:Montserrat;font-style:normal;font-weight:100;src:local('Montserrat Thin'),local('Montserrat-Thin'),url(https://fonts.gstatic.com/s/montserrat/v12/JTUQjIg1_i6t8kCHKm45_QpRxC7mw9c.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:Montserrat;font-style:normal;font-weight:100;src:local('Montserrat Thin'),local('Montserrat-Thin'),url(https://fonts.gstatic.com/s/montserrat/v12/JTUQjIg1_i6t8kCHKm45_QpRzS7mw9c.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:Montserrat;font-style:normal;font-weight:100;src:local('Montserrat Thin'),local('Montserrat-Thin'),url(https://fonts.gstatic.com/s/montserrat/v12/JTUQjIg1_i6t8kCHKm45_QpRxy7mw9c.woff2) format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Montserrat;font-style:normal;font-weight:100;src:local('Montserrat Thin'),local('Montserrat-Thin'),url(https://fonts.gstatic.com/s/montserrat/v12/JTUQjIg1_i6t8kCHKm45_QpRyS7m.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Montserrat;font-style:normal;font-weight:300;src:local('Montserrat Light'),local('Montserrat-Light'),url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_cJD3gTD_u50.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:Montserrat;font-style:normal;font-weight:300;src:local('Montserrat Light'),local('Montserrat-Light'),url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_cJD3g3D_u50.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:Montserrat;font-style:normal;font-weight:300;src:local('Montserrat Light'),local('Montserrat-Light'),url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_cJD3gfD_u50.woff2) format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Montserrat;font-style:normal;font-weight:300;src:local('Montserrat Light'),local('Montserrat-Light'),url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_cJD3gnD_g.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Montserrat;font-style:normal;font-weight:400;src:local('Montserrat Regular'),local('Montserrat-Regular'),url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:Montserrat;font-style:normal;font-weight:400;src:local('Montserrat Regular'),local('Montserrat-Regular'),url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:Montserrat;font-style:normal;font-weight:400;src:local('Montserrat Regular'),local('Montserrat-Regular'),url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Montserrat;font-style:normal;font-weight:400;src:local('Montserrat Regular'),local('Montserrat-Regular'),url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Montserrat;font-style:normal;font-weight:500;src:local('Montserrat Medium'),local('Montserrat-Medium'),url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_ZpC3gTD_u50.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:Montserrat;font-style:normal;font-weight:500;src:local('Montserrat Medium'),local('Montserrat-Medium'),url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_ZpC3g3D_u50.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:Montserrat;font-style:normal;font-weight:500;src:local('Montserrat Medium'),local('Montserrat-Medium'),url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_ZpC3gfD_u50.woff2) format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Montserrat;font-style:normal;font-weight:500;src:local('Montserrat Medium'),local('Montserrat-Medium'),url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_ZpC3gnD_g.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Montserrat;font-style:normal;font-weight:700;src:local('Montserrat Bold'),local('Montserrat-Bold'),url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3gTD_u50.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:Montserrat;font-style:normal;font-weight:700;src:local('Montserrat Bold'),local('Montserrat-Bold'),url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3g3D_u50.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:Montserrat;font-style:normal;font-weight:700;src:local('Montserrat Bold'),local('Montserrat-Bold'),url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3gfD_u50.woff2) format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Montserrat;font-style:normal;font-weight:700;src:local('Montserrat Bold'),local('Montserrat-Bold'),url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3gnD_g.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:Montserrat;font-style:normal;font-weight:900;src:local('Montserrat Black'),local('Montserrat-Black'),url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_epG3gTD_u50.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:Montserrat;font-style:normal;font-weight:900;src:local('Montserrat Black'),local('Montserrat-Black'),url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_epG3g3D_u50.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:Montserrat;font-style:normal;font-weight:900;src:local('Montserrat Black'),local('Montserrat-Black'),url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_epG3gfD_u50.woff2) format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:Montserrat;font-style:normal;font-weight:900;src:local('Montserrat Black'),local('Montserrat-Black'),url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_epG3gnD_g.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style>
+
+    <script type='application/ld+json'>
+        {
+            "@context": "http:\/\/schema.org",
+            "@type": "WebSite",
+            "@id": "#website",
+            "url": "https:\/\/cosmos.studio\/",
+            "name": "\u0421\u0442\u0443\u0434\u0438\u044f \u041a\u043e\u0441\u043c\u043e\u0441",
+            "alternateName": "Cosmos Studio",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https:\/\/cosmos.studio\/?s={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+    <script type='application/ld+json'>
+        {
+            "@context": "http:\/\/schema.org",
+            "@type": "Organization",
+            "url": "https:\/\/cosmos.studio\/",
+            "sameAs": ["https:\/\/www.facebook.com\/designcosmos\/",
+                "https:\/\/www.instagram.com\/cosmosdesignstudio\/"
+            ],
+            "@id": "#organization",
+            "name": "\u0421\u0442\u0443\u0434\u0438\u044f \u041a\u043e\u0441\u043c\u043e\u0441",
+            "logo": "https:\/\/cosmos.studio\/wp-content\/uploads\/2016\/12\/Avatar.png"
+        }
+    </script>
+
+    <link rel='dns-prefetch' href='http://s.w.org/' />
+    <link rel='stylesheet' id='bootstrap-css' href='css/bootstrap.min5010.css?ver=4.9.8' type='text/css' media='all' />
+    <link rel='stylesheet' id='main-css' href='css/main38e2.css?ver=1536032691' type='text/css' media='all' />
+
+    <link rel="stylesheet" href="css/card-style.css">
+    <link rel="stylesheet" href="css/style.css">    
+
 </head>
 
-<body>
-  <!-- particles.js container --> 
-  <div id="particles-js"></div> 
+<body data-rsssl=1 id="body" class="animsition">
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-65219434-27', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- particles.js container -->
+    <div class="bg-image">
+        <div id="particles-js"></div>
+    </div>
+
+    <header class="hvh">
+        <div class="parent itslogo">
+            <div class="child">
+                <div class="logo">
+                    <img src="./img/organizers/devfest18.gif" class="" alt="GDGSantaCruz">
+                    <h4 id="dateWeb" >20 de Octubre 2018<br> <a href="http://www.upds.edu.bo/">Universidad Privada Domingo Savio</a></h4>   
+                    <h4 id="dateMobile" >20 de Octubre 2018<br> <a href="http://www.upds.edu.bo/">UPDS</a></h4>                        
+                </div>
+            </div>
+        </div>
+
+        <div class="section wrapper header" id="start">
+            <nav class="container elements">
+              
+
+                <div class="absolute topright">
+                    <a data-anim="no-anim" class="ripple ds-c-btn" target="Black" href="https://www.meetup.com/es-ES/GDG-Santa-Cruz/events/frcgcqyxnbbc/">Registrate</a>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+
+    <div id="homepage-content">
+
+        <section>
+            <div class="section wrapper" id="works">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="ds-work-wrapper">
+
+                            <div class="title-wrap">
+                                <div class="num">DEVFEST</div>
+                                <h2 class="title">¿Qué es un DevFest?</h2>
+                            </div>
+                            <article id="container-description">
+                                <div class="col-lg-12 ">
+                                        <div class="ds-work-image">
+                                            <a target="_blank" rel="nofollow" href="https://developers.google.com/events/devfest/"
+                                                title="GDG DevFest"><img width="800" height="450" src="img/other/devfest.jpg"
+                                                    class="attachment-work-list size-work-list wp-post-image" alt="" /></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="description ds-work-title paroller">
+                                            <h4 class="align-middle">Un DevFest es un evento donde programadores,
+                                                desarrolladores,
+                                                docentes, estudiantes y toda clase de gente se juntan para compartir
+                                                experiencias y
+                                                avances sobre las nuevas tecnologías. <br> <span>#DevFest18</span> </h4>
+                                        </div>
+                                </div>
+                            </article>
 
 
-  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
-  <!-- stats.js lib -->
-  <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
-  <script  src="js/index.js"></script>
+                            <div class="title-wrap">
+                                <div class="num">RECUERDOS</div>
+                                <h2 class="title">Años atrás</h2>
+                            </div>
+                            <article>
+                                <div class="col-lg-12 ">
+
+                                    <div class="ds-work-image">
+                                        <a target="_blank" rel="nofollow" href="https://kirillpritula.com/en/" title="Kirill Pritula Personal Website"><img
+                                                width="875" height="560" src="img/other/devfests.gif" class="attachment-work-list size-work-list wp-post-image"
+                                                alt="" /></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="ds-work-title paroller">
+                                        <h2>
+                                            <a target="_blank" rel="nofollow" href="https://meetup.com/es-ES/GDG-Santa-Cruz/"
+                                                title="Versiones Anteriores">Versiones <br> Anteriores</a>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </article>
+                            <div class="title-wrap">
+                                <div class="num">SPEAKERS</div>
+                                <h2 class="title">Speakers</h2>
+                            </div>
+                            <article>
+                                <div class="col-lg-12 ">
+                                    <div class="cwrapper">
+                                        <div class="cols">
+                                            <div class="ccol" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="ccontainer">
+                                                    <div class="front" style="background-image: url(img/people/fernando-chavez.jpg)">
+                                                        <div class="inner">
+                                                            <p>Fernando Chavez</p>
+                                                            <span>Docente investigador
+                                                                <strong>UPSA</strong>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="back">
+                                                        <div class="inner">
+                                                            <p style="font-size: 13px;">
+                                                                Fernando es graduado en Ingeniería Industrial y de
+                                                                Sistemas de la Universidad Privada de
+                                                                Santa Cruz. Es director de Operaciones
+                                                                y Proyectos en
+                                                                <a href="https://zoftco.com/" target="_blank" rel="noopener noreferrer">Zoftcoapps
+                                                                    Software
+                                                                    SRL</a>, es un docente Investigador en la
+                                                                <a href="https://www.upsa.edu.bo/" target="_blank" rel="noopener noreferrer">
+                                                                    UPSA</a> y
+                                                                también realiza trabajos en áreas Medio Ambiental, como
+                                                                técnico de laboratorio, especialista
+                                                                de monitoreo, consultor de proyectos y Analista en
+                                                                Gestión de Emisiones. </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ccol" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="ccontainer">
+                                                    <div class="front" style="background-image: url(img/people/ariel-valverde.jpg)">
+                                                        <div class="inner">
+                                                            <p>Ariel Valverde</p>
+                                                            <span>Director ejecutivo
+                                                                <strong>GTV</strong>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="back">
+                                                        <div class="inner">
+                                                            <p style="font-size: 13px;">
+                                                                Ariel es un Cruceño de 32 años Ingeniero de sistemas,
+                                                                apasionado por la tecnología e
+                                                                innovación. Actualmente es Director
+                                                                ejecutivo del
+                                                                <a href="http://www.gtvalverde.net/" target="_blank"
+                                                                    rel="noopener noreferrer">Grupo
+                                                                    Tecnológico Valverde (GTV)</a> con empresas de base
+                                                                tecnológica en Bolivia, Paraguay y
+                                                                EEUU.
+                                                                En Bolivia ha sido co fundador del primer Hackaton de
+                                                                aplicaciones móviles del país HackApp y
+                                                                este
+                                                                año fundó la primer incubadora de empresas de base
+                                                                tecnológica en el país 6BLabs. Entre sus
+                                                                mayores
+                                                                motivaciones esta demostrarle al mundo que en Bolivia
+                                                                se produce tecnología y de clase
+                                                                mundial.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ccol" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="ccontainer">
+                                                    <div class="front" style="background-image: url(img/people/ariel-ortuno.jpg)">
+                                                        <div class="inner">
+                                                            <p>Ariel Ortuño Solis</p>
+                                                            <span>Jefe de Proyectos
+                                                                <strong>Avatech</strong>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="back">
+                                                        <div class="inner">
+                                                            <p>Ariel es desarrollador de aplicaciones móviles y web con
+                                                                más de 10 años de experiencia en
+                                                                Frontend
+                                                                y Backend en tecnologías como Java, .Net y PHP.
+                                                                Apasionado por la tecnología, investigandor
+                                                                de
+                                                                nuevas herramientas que mejoren el proceso de
+                                                                desarrollo. </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ccol" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="ccontainer">
+                                                    <div class="front" style="background-image: url(img/people/juan-pablo-velasco.jpg)">
+                                                        <div class="inner">
+                                                            <p>Juan Pablo Velasco</p>
+                                                            <span>Managing Director
+                                                                <strong>PedidosYa Bolivia</strong>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="back">
+                                                        <div class="inner">
+                                                            <p style="font-size: 13px;">
+                                                                <a href="https://www.pedidosya.com.bo/" target="_blank"
+                                                                    rel="noopener noreferrer">PedidosYa</a>,
+                                                                empresa perteneciente del holding Aleman Delivery Hero
+                                                                adquire la empresa Netcomidas.com
+                                                                donde Juan Pablo era CEO & Co-Founder, lograron en solo
+                                                                dos años hacer la venta mas
+                                                                importante
+                                                                de un Startup Boliviano en la historia del Ecommerce
+                                                                Nacional. A sus 31 años es parte del
+                                                                ecosistema
+                                                                Tech latinoamericano y nombrado mentor de distintas
+                                                                aceleradoras en el país. Cree en que
+                                                                nuestro
+                                                                país esta siendo observado por el mundo y es un mercado
+                                                                muy atractivo para que las grandes
+                                                                Compañías
+                                                                Tech vengan a invertir. </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ccol" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="ccontainer">
+                                                    <div class="front" style="background-image: url(img/people/sergio-barbery.jpg)">
+                                                        <div class="inner">
+                                                            <p>Sergio Barbery</p>
+                                                            <span>Partner & Country Manager
+                                                                <strong>Giro54</strong>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="back">
+                                                        <div class="inner">
+                                                            <p>Sergio es specialista en Investigación de Mercados y
+                                                                comportamiento del consumidor con
+                                                                especializaciones
+                                                                en Investigación de Mercados e Investigación con
+                                                                dispositivos Móviles de la University of
+                                                                Giorgia
+                                                                (UGA). Investiador de User Experience (UX).A finales de
+                                                                2017 decidió constituir la primera
+                                                                agencia
+                                                                especializada en Diseño de UX del país. Es
+                                                                socio-fundador de
+                                                                <a href="http://giro54.com.bo/" target="_blank" rel="noopener noreferrer">
+                                                                    Giro54 Bolivia</a>.
+                                                                Country Manager para Bolivia de IDF (Indeteraction
+                                                                Design Foundation) </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ccol" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="ccontainer">
+                                                    <div class="front" style="background-image: url(img/people/mauricio-salazar.jpg)">
+                                                        <div class="inner">
+                                                            <p>Mauricio Salazar</p>
+                                                            <span>CTO
+                                                                <strong>Netbits</strong>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="back">
+                                                        <div class="inner">
+                                                            <p>Mauricio tiene 21 años, es estudiante Ing. De Sistemas
+                                                                en la UDI. Lider de equipo de
+                                                                desarrollo detrás
+                                                                de
+                                                                <a href="http://tugerente.com/" target="_blank" rel="noopener noreferrer">tuGerente.com</a>
+                                                                y
+                                                                planificador el futuro del mismo. Su meta junto a
+                                                                Netbits es volver a Bolivia
+                                                                Tecnológica.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ccol" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="ccontainer">
+                                                    <div class="front" style="background-image: url(img/people/pablo-sanchez.jpg)">
+                                                        <div class="inner">
+                                                            <p>Pablo Sanchez</p>
+                                                            <span>Gerente General Bolivia
+                                                                <strong>SGS 360º</strong>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="back">
+                                                        <div class="inner">
+                                                            <p>Pablo es gerente general en Bolivia de
+                                                                <a href="http://www.sgs360.net/" target="_blank" rel="noopener noreferrer">Security
+                                                                    Global
+                                                                    Solutions 360º</a>, es Networker, integrador,
+                                                                gerente y desarrollador de negocios
+                                                                habilidades avanzadas en negociación corporativa e
+                                                                institucional, estratega comercial,
+                                                                proactividad
+                                                                para educación y entrenamiento continuo.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ccol" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="ccontainer">
+                                                    <div class="front" style="background-image: url(img/people/elias-negrete.jpg)">
+                                                        <div class="inner">
+                                                            <p>Elias Negrete</p>
+                                                            <span>Organizer
+                                                                <strong>GDG Santa Cruz</strong>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="back">
+                                                        <div class="inner">
+                                                            <p>
+                                                                Elias es Ing.o Informático orientado al desarrollo de
+                                                                software, con amplia experiencia, con
+                                                                capacidad para trabajar en equipo,
+                                                                capacidad de adaptación y aprendizaje de nuevas
+                                                                tecnologías. Desarrollador de aplicaciones
+                                                                Front
+                                                                End (Angular 5) y Asp.net Core para múltiples
+                                                                plataformas. Ionic para el desarrollo de
+                                                                aplicaciones
+                                                                móviles hibridas. </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="ccol" ontouchstart="this.classList.toggle('hover');">
+                                                <div class="ccontainer">
+                                                    <div class="front" style="background-image: url(img/people/huascar-miranda.jpg)">
+                                                        <div class="inner">
+                                                            <p>Huascar A. Miranda Martinez</p>
+                                                            <span>Presidente
+                                                                <strong>Criptoanalisis</strong>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="back">
+                                                        <div class="inner">
+                                                            <p>
+                                                                Huascar es project manager para equipos de desarollo
+                                                                web. Presidente de
+                                                                <a href="https://criptoanalisis.org" target="_blank"
+                                                                    rel="noopener noreferrer">criptoanalisis</a>
+                                                                y cofundador de la Asociación Blockchain Bolivia.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </article>
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- stats.js lib -->
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <script src="js/index.js"></script>
+
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58b041d790c77033"></script>
 </body>
 
 </html>
