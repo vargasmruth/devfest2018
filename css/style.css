@@ -144,8 +144,9 @@ body > canvas, #body section > .section, #start .absolute, .sublogo, #footer {
 }
 .description.ds-work-title h4 {
     color: var(--blackTwo);
-    font-size: 31px;
+    font-size: 28px;
     padding-left: 200px;
+    font-weight: 40;
 }
 .description.ds-work-title span {
     color: var(--blue);
@@ -170,8 +171,8 @@ h2.title {
     padding-bottom: 30px;
     font-weight: 730;
     color: var(--yellow);
+    border-bottom: 2px solid #cecdcd;
 }
-
 
 #works .ds-work-title a {
     font-size: 55px;
@@ -187,21 +188,162 @@ h2.title {
     -o-transition: border-color .3s;
     transition: border-color .3s;
 }
-#works .ds-work-title h2 a:hover {
+#works .ds-work-title a:hover {
     text-decoration: none;
+    border: none;
 }
 
 /* SPEAKERS */
+.cwrapper {
+    width: 95%;
+}
 .back .inner p {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 18px;
+    font-size: 17px;
+    line-height: 21px;
 }
 
 .front .inner {
     line-height: 20px;
 }
 
+/* Timeline*/
+
+
+.timeline {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  .timeline .timeline-body {
+    position: relative;
+    background-color: var(--white);
+    margin-left: 100px;
+    border-radius: 0 8px 8px 0;
+    padding: 5px 0;
+  }
+  .timeline .timeline-body:after {
+    content: '';
+    width: 4px;
+    height: 100%;
+    background-color: var(--blue);
+    position: absolute;
+    left: -4px;
+    top: 0;
+    opacity: 0.8;
+  }
+  .timeline .timeline-body .timeline-item {
+    position: relative;
+  }
+  .timeline .timeline-body .timeline-item:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 4px solid var(--blue);
+    background-color: var(--white);
+    position: absolute;
+    left: -12px;
+    top: 0px;
+    opacity: 0.9;
+    z-index: 9;
+    
+  }
+  .timeline .timeline-body .timeline-item .time {
+    position: absolute;
+    left: -90px;
+    top: 4px;
+    opacity: 0.7;
+    color: var(--green);
+    font-size: 23px;
+    font-weight: 700;
+  }
+  .timeline .timeline-body .timeline-item .time-mobile {
+    display: none;        
+}
+  .timeline .timeline-body .timeline-item .time:hover {
+    opacity: 0.7;
+  }
+  .timeline .timeline-body .timeline-item .content {
+    margin: 30px 40px;
+    padding-bottom: 10px;
+    color: var(--blackTwo);
+  }
+  .timeline .timeline-body .timeline-item .content p {
+    margin: 5px 0px;
+  }
+  .timeline .timeline-body .timeline-item .content img{
+    max-width: 75%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .timeline .timeline-body .timeline-item .content .title {
+    font-weight: 400;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    font-size: 31px;
+    color: var(--yellow);
+  }
+  .timeline .timeline-body .timeline-item .content .row {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Organizers */
+.organizers img {
+    max-width: 85%;
+    filter: grayscale(1);
+    margin: 0px 25px;
+    transition: border-color 0.3s ease 0s;
+}
+.organizers h2 {
+    color: #34A853;
+    font-size: 31px;
+    font-weight: 700;çext-shadow: rgba(0, 0, 0, 0.15) 0px 33px 60px;
+    text-align: center;
+}
+.organizers img:hover {
+    filter: none;
+}
+.organizers ul {
+ text-align: center;   
+ padding: 30px;
+}
+.organizers ul li {
+    display: inline-block;
+}
+
+
+.fab, #footer a, #footer p {
+    color: var(--blackTwo);
+}
+.fleft p {
+    text-align: left;
+    margin-bottom: 0px;
+}
+.fcenter {
+    text-align: center;
+}
+.fright p {
+    text-align: right;
+    margin-bottom: 0px;
+}
+.social-footer {
+    font-size: 23px;
+}
+
+#tickets .row img {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* MOBILE */
+
+  
 @media only screen and (min-width: 1200px){
     .description.ds-work-title {
         bottom: 0px;
@@ -257,4 +399,49 @@ h2.title {
     #container-description{
         margin-bottom: 260px;
     }
+    .timeline .timeline-body .timeline-item .time-mobile {
+        display: block;
+        opacity: 0.7;
+        color: var(--green);
+        font-size: 16px;
+        font-weight: 650;        
+    }
+    .timeline .timeline-body .timeline-item .time {
+        display: none;
+    }
+    .timeline .timeline-body {
+        background-color: #ffffff;
+        margin-left: 0px;
+        border-radius: 0px 5px 5px 0px;
+        padding: 5px 0px;
+      }
+      .timeline {
+        width: 90%;
+    }
+    .timeline .timeline-body .timeline-item .content {
+        margin: 30px;
+    }
+    .timeline .timeline-body .timeline-item .content .title {
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+        font-size: 24px;
+    }
+    .timeline .timeline-body .timeline-item .content .row {
+        text-align: center;
+        padding: 5px;
+    }
+    .timeline .timeline-body .timeline-item .content img {
+        max-width: 45%;
+    }
+    .fleft p, .fright p {
+        text-align: center;
+        font-size: 14px;
+    }
+    #tickets .row {
+        margin: 5px;
+    }
+    .ds-work-wrapper article {
+        margin-bottom: 100px;
+    }
 }
+

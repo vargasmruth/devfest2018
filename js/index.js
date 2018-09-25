@@ -108,9 +108,3 @@ particlesJS("particles-js", {
     },
     "retina_detect": true
 });
-
-var vHeight = $(window).height(),
-    vWidth = $(window).width(),
-    cover = $('.cover');
-
-cover.css({"height":vHeight,"width":vWidth});

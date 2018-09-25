@@ -115,7 +115,10 @@ blockquote.right {
 
 
 html, body {
+    /*
     background-color: #0c0c0c;
+    */
+    background-color: #fff;
 }
 
 body {
@@ -2914,7 +2917,10 @@ div.wpcf7 .ajax-loader {
     background: none;
 }
 .ds-black {
+    /*
     background-color: #0c0c0c;
+    */
+    background-color: #fff;
     margin-top: 150px;
 }
 .thankyou .logo {
