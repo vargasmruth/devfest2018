@@ -24,7 +24,7 @@ body {
     margin: 0;
     /* font: normal 75% Arial, Helvetica, sans-serif; */
     font-family: 'Open Sans', sans-serif;
-    background-color: var(--white);
+    background-color: transparent;
     height: 100%;
 }
 
@@ -39,10 +39,6 @@ canvas {
     width: 100%;
     height: 100%;
     background-color: transparent;
-    background-image: url("");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
 }
 
 /* ---- here personalice ---- */
@@ -51,18 +47,19 @@ a:hover {
     text-decoration: none;
 }
 
-.animsition {
+.animation {
     position: relative;
     opacity: 1; 
     animation-fill-mode: both;
+    z-index: 5;
 }
 
 .logo img {
-    max-width: 100%;
+    max-width: 85%;
 }
 .logo h4 {
     color: var(--green);
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 600;
 }
 .logo h4 a {
@@ -129,7 +126,7 @@ body > canvas, #body section > .section, #start .absolute, .sublogo, #footer {
 
 /* content for articles*/
 .ds-work-wrapper article {
-    margin-bottom: 300px;
+    margin-bottom: 250px;
 }
 
 .ds-work-wrapper {
@@ -171,7 +168,7 @@ h2.title {
     padding-bottom: 30px;
     font-weight: 730;
     color: var(--yellow);
-    border-bottom: 2px solid #cecdcd;
+    border-bottom: none;
 }
 
 #works .ds-work-title a {
@@ -210,7 +207,7 @@ h2.title {
 
 
 .timeline {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     padding: 10px;
   }
@@ -264,15 +261,21 @@ h2.title {
     opacity: 0.7;
   }
   .timeline .timeline-body .timeline-item .content {
-    margin: 30px 40px;
+    margin: 15px 10px;
     padding-bottom: 10px;
     color: var(--blackTwo);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #F4F4F4;
   }
   .timeline .timeline-body .timeline-item .content p {
-    margin: 5px 0px;
+    margin: 5px;
+  }
+  .timeline .timeline-body .timeline-item .content .col-md-10 {
+    padding-left: 0px;
   }
   .timeline .timeline-body .timeline-item .content img{
-    max-width: 75%;
+    max-width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -284,13 +287,9 @@ h2.title {
   .timeline .timeline-body .timeline-item .content .title {
     font-weight: 400;
     margin-bottom: 5px;
-    padding-bottom: 10px;
-    font-size: 31px;
-    color: var(--yellow);
-  }
-  .timeline .timeline-body .timeline-item .content .row {
     padding: 10px;
-    border-radius: 10px;
+    font-size: 21px;
+    color: var(--yellow);
   }
 
   /* Organizers */
@@ -324,6 +323,8 @@ h2.title {
 .fleft p {
     text-align: left;
     margin-bottom: 0px;
+    padding-top: 20px; 
+    font-size: 12px;
 }
 .fcenter {
     text-align: center;
@@ -331,6 +332,8 @@ h2.title {
 .fright p {
     text-align: right;
     margin-bottom: 0px;
+    padding-top: 20px; 
+    font-size: 12px;
 }
 .social-footer {
     font-size: 23px;
@@ -350,7 +353,9 @@ h2.title {
     }
 }
 @media only screen and (max-width: 992px){
-
+    .logo img {
+        max-width: 100%;
+    }
     .logo h4 {
         font-size: 28px;
         font-weight: 400;
@@ -360,6 +365,7 @@ h2.title {
     }
     #dateWeb{ display: none; }
     #dateMobile{ display: block;}
+    #l-upds {max-width: 100px;}
 
     #works .ds-work-title a {
         font-size: 30px;
@@ -397,7 +403,7 @@ h2.title {
         font-weight: 500;
     }
     #container-description{
-        margin-bottom: 260px;
+        margin-bottom: 250px;
     }
     .timeline .timeline-body .timeline-item .time-mobile {
         display: block;
@@ -424,7 +430,7 @@ h2.title {
     .timeline .timeline-body .timeline-item .content .title {
         margin-bottom: 5px;
         padding-bottom: 5px;
-        font-size: 24px;
+        font-size: 21px;
     }
     .timeline .timeline-body .timeline-item .content .row {
         text-align: center;
@@ -442,6 +448,12 @@ h2.title {
     }
     .ds-work-wrapper article {
         margin-bottom: 100px;
+    }
+    .timeline .timeline-body .timeline-item .content p {
+        text-align: center;
+    }
+    .time-mobile {
+        text-align: left;
     }
 }
 
