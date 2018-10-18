@@ -1,3 +1,5 @@
+
+
 particlesJS("particles-js", {
     "particles": {
         "number": {
@@ -54,7 +56,7 @@ particlesJS("particles-js", {
         },
         "move": {
             "enable": true,
-            "speed": 2,
+            "speed": 4,
             "direction": "none",
             "random": false,
             "straight": false,
@@ -71,7 +73,7 @@ particlesJS("particles-js", {
         "detect_on": "canvas",
         "events": {
             "onhover": {
-                "enable": false,
+                "enable": true,
                 "mode": "grab"
             },
             "onclick": {
